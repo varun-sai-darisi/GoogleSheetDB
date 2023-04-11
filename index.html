@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Add Details To Sheet Website</h1>
+
+<script type="text/javascript">
+    const userAction = async () => {
+        const response = await fetch('http://localhost:8000/add-details', {
+            method: 'POST',
+            body: {
+                "name" : document.getElementById("name").value,
+                "mobile_number" : document.getElementById("mobileNumber").value
+            }, // string or object
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const myJson = await response.json(); //extract JSON from the http response
+        // do something with myJson
+    }
+
+</script>
+
+<form action="/action_page.php">
+    <label for="name">Name :</label>
+    <input type="text" id="name" name="fname"><br><br>
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber" name="lname"><br><br>
+    <input onclick="userAction()" type="submit" value="Submit">
+</form>
+
+<p>Click the "Submit" button to see the data being recorded in google sheets".</p>
+
+</body>
+</html>
