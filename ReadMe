@@ -6,7 +6,7 @@ go mod vendor
 
 and then run go run main.go 
 
-Hit this curl and you will see entries are being added to this sheet
+Hit this curl and you will see entries are being added to this sheet https://docs.google.com/spreadsheets/d/1ER-wfyojMbA15BzPx24DoUaNrmnOj69yOi95sCUQ8Xo/edit#gid=0
 
 curl --location 'localhost:8000/add-details' \
 --header 'Content-Type: application/json' \
