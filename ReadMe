@@ -1,0 +1,16 @@
+Open this in goland repository
+
+Run these commands
+go mod tidy
+go mod vendor
+
+and then run go run main.go 
+
+Hit this curl and you will see entries are being added to this sheet
+
+curl --location 'localhost:8000/add-details' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name":"varun",
+    "mobile_number": "1234567891"
+}'
